@@ -10,16 +10,22 @@ import javax.swing.JOptionPane;
  * @author usuario
  */
 public class VistaMundial extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaMundial.class.getName());
+
+    // Declaración del controlador
+    private ControladorMundial controlador;
 
     /**
      * Creates new form VistaMundial
      */
     public VistaMundial() {
+        // Inicializas el controlador ANTES de cargar los componentes
+        this.controlador = new ControladorMundial();
+        
         initComponents();
+        
+        // Centras la ventana en pantalla
+        this.setLocationRelativeTo(null);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -170,7 +176,7 @@ public class VistaMundial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnActualizarRankingActionPerformed
 
     private void btnMostrarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarReporteActionPerformed
-    areaReporte.setText(controlador.obtenerReporte());
+ areaReporte.setText(controlador.obtenerReporte());
     }//GEN-LAST:event_btnMostrarReporteActionPerformed
 
     /**
