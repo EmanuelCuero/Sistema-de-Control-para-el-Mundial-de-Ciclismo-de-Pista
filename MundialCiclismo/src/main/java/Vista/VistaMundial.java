@@ -125,7 +125,27 @@ public class VistaMundial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCrearEquipoActionPerformed
 
     private void btnRegistrarCompetidorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCompetidorActionPerformed
-        // TODO add your handling code here:
+    try {
+        String nombreEquipo = JOptionPane.showInputDialog(this, "Nombre del equipo:");
+        String nombre = JOptionPane.showInputDialog(this, "Nombre del competidor:");
+        int edad = Integer.parseInt(JOptionPane.showInputDialog(this, "Edad:"));
+        String pais = JOptionPane.showInputDialog(this, "Pais:");
+        int ranking = Integer.parseInt(JOptionPane.showInputDialog(this, "Ranking mundial:"));
+        double estatura = Double.parseDouble(JOptionPane.showInputDialog(this, "Estatura (m):"));
+        double peso = Double.parseDouble(JOptionPane.showInputDialog(this, "Peso (kg):"));
+
+        boolean ok = controlador.registrarCompetidor(nombreEquipo, nombre, edad, pais, ranking, estatura, peso);
+        if (ok) {
+            JOptionPane.showMessageDialog(this, "Competidor registrado correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "El equipo no existe.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Debe ingresar valores numericos validos.",
+                "Error de formato", JOptionPane.ERROR_MESSAGE);
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }        // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistrarCompetidorActionPerformed
 
     private void btnActualizarRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarRankingActionPerformed
