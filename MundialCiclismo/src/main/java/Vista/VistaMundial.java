@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-import controlador.ControladorMundial;
+import Controlador.ControladorMundial;
 import javax.swing.JOptionPane;
 /**
  *
@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
 public class VistaMundial extends javax.swing.JFrame {
 
     // Declaración del controlador
-    private ControladorMundial controlador;
+    private ControladorMundial Controlador;
 
     /**
      * Creates new form VistaMundial
      */
     public VistaMundial() {
         // Inicializas el controlador ANTES de cargar los componentes
-        this.controlador = new ControladorMundial();
+        this.Controlador = new ControladorMundial();
         
         initComponents();
         
@@ -119,7 +119,7 @@ public class VistaMundial extends javax.swing.JFrame {
         try {
         String nombre = JOptionPane.showInputDialog(this, "Nombre del equipo:");
         String pais = JOptionPane.showInputDialog(this, "Pais del equipo:");
-        boolean ok = controlador.crearEquipo(nombre, pais);
+        boolean ok = Controlador.crearEquipo(nombre, pais);
         if (ok) {
             JOptionPane.showMessageDialog(this, "Equipo creado correctamente.");
         } else {
@@ -140,7 +140,7 @@ public class VistaMundial extends javax.swing.JFrame {
         double estatura = Double.parseDouble(JOptionPane.showInputDialog(this, "Estatura (m):"));
         double peso = Double.parseDouble(JOptionPane.showInputDialog(this, "Peso (kg):"));
 
-        boolean ok = controlador.registrarCompetidor(nombreEquipo, nombre, edad, pais, ranking, estatura, peso);
+        boolean ok = Controlador.registrarCompetidor(nombreEquipo, nombre, edad, pais, ranking, estatura, peso);
         if (ok) {
             JOptionPane.showMessageDialog(this, "Competidor registrado correctamente.");
         } else {
@@ -161,7 +161,7 @@ public class VistaMundial extends javax.swing.JFrame {
         int opcion = JOptionPane.showConfirmDialog(this, "Gano medalla?", "Medalla", JOptionPane.YES_NO_OPTION);
         boolean ganoMedalla = (opcion == JOptionPane.YES_OPTION);
 
-        boolean ok = controlador.actualizarRanking(nombre, puntos, ganoMedalla);
+        boolean ok = Controlador.actualizarRanking(nombre, puntos, ganoMedalla);
         if (ok) {
             JOptionPane.showMessageDialog(this, "Ranking actualizado correctamente.");
         } else {
@@ -176,7 +176,7 @@ public class VistaMundial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnActualizarRankingActionPerformed
 
     private void btnMostrarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarReporteActionPerformed
- areaReporte.setText(controlador.obtenerReporte());
+ areaReporte.setText(Controlador.obtenerReporte());
     }//GEN-LAST:event_btnMostrarReporteActionPerformed
 
     /**
@@ -196,7 +196,7 @@ public class VistaMundial extends javax.swing.JFrame {
                 }
             }
         } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+          ex.printStackTrace();
         }
         //</editor-fold>
 
