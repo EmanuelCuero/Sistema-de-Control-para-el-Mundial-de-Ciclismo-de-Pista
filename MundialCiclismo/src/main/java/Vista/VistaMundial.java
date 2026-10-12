@@ -149,11 +149,45 @@ public class VistaMundial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistrarCompetidorActionPerformed
 
     private void btnActualizarRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarRankingActionPerformed
-        // TODO add your handling code here:
+    try {
+        String nombre = JOptionPane.showInputDialog(this, "Nombre del competidor:");
+        int puntos = Integer.parseInt(JOptionPane.showInputDialog(this, "Puntos obtenidos:"));
+        int opcion = JOptionPane.showConfirmDialog(this, "Gano medalla?", "Medalla", JOptionPane.YES_NO_OPTION);
+        boolean ganoMedalla = (opcion == JOptionPane.YES_OPTION);
+
+        boolean ok = controlador.actualizarRanking(nombre, puntos, ganoMedalla);
+        if (ok) {
+            JOptionPane.showMessageDialog(this, "Ranking actualizado correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "El competidor no existe.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido.",
+                "Error de formato", JOptionPane.ERROR_MESSAGE);
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    } // TODO add your handling code here:
     }//GEN-LAST:event_btnActualizarRankingActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
+    try {
+        String nombre = JOptionPane.showInputDialog(this, "Nombre del competidor:");
+        int puntos = Integer.parseInt(JOptionPane.showInputDialog(this, "Puntos obtenidos:"));
+        int opcion = JOptionPane.showConfirmDialog(this, "Gano medalla?", "Medalla", JOptionPane.YES_NO_OPTION);
+        boolean ganoMedalla = (opcion == JOptionPane.YES_OPTION);
+
+        boolean ok = controlador.actualizarRanking(nombre, puntos, ganoMedalla);
+        if (ok) {
+            JOptionPane.showMessageDialog(this, "Ranking actualizado correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "El competidor no existe.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido.",
+                "Error de formato", JOptionPane.ERROR_MESSAGE);
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }      // TODO add your handling code here:
     }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
