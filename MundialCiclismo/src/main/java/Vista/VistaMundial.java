@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
+import controlador.ControladorMundial;
+import javax.swing.JOptionPane;
 /**
  *
  * @author usuario
@@ -109,7 +110,18 @@ public class VistaMundial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearEquipoActionPerformed
-        // TODO add your handling code here:
+        try {
+        String nombre = JOptionPane.showInputDialog(this, "Nombre del equipo:");
+        String pais = JOptionPane.showInputDialog(this, "Pais del equipo:");
+        boolean ok = controlador.crearEquipo(nombre, pais);
+        if (ok) {
+            JOptionPane.showMessageDialog(this, "Equipo creado correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "Datos invalidos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_btnCrearEquipoActionPerformed
 
     private void btnRegistrarCompetidorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCompetidorActionPerformed
