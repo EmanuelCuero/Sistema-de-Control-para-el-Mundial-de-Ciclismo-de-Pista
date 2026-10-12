@@ -34,7 +34,7 @@ public class VistaMundial extends javax.swing.JFrame {
         btnCrearEquipo = new javax.swing.JButton();
         btnRegistrarCompetidor = new javax.swing.JButton();
         btnActualizarRanking = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
+        btnMostrarReporte = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaReporte = new javax.swing.JTextArea();
 
@@ -49,8 +49,8 @@ public class VistaMundial extends javax.swing.JFrame {
         btnActualizarRanking.setText("Actualizar Ranking");
         btnActualizarRanking.addActionListener(this::btnActualizarRankingActionPerformed);
 
-        btnSalir.setText("Mostrar Reporte");
-        btnSalir.addActionListener(this::btnSalirActionPerformed);
+        btnMostrarReporte.setText("Mostrar Reporte");
+        btnMostrarReporte.addActionListener(this::btnMostrarReporteActionPerformed);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -59,7 +59,7 @@ public class VistaMundial extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMostrarReporte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCrearEquipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRegistrarCompetidor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
                     .addComponent(btnActualizarRanking, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -75,7 +75,7 @@ public class VistaMundial extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnActualizarRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMostrarReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -169,26 +169,9 @@ public class VistaMundial extends javax.swing.JFrame {
     } // TODO add your handling code here:
     }//GEN-LAST:event_btnActualizarRankingActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-    try {
-        String nombre = JOptionPane.showInputDialog(this, "Nombre del competidor:");
-        int puntos = Integer.parseInt(JOptionPane.showInputDialog(this, "Puntos obtenidos:"));
-        int opcion = JOptionPane.showConfirmDialog(this, "Gano medalla?", "Medalla", JOptionPane.YES_NO_OPTION);
-        boolean ganoMedalla = (opcion == JOptionPane.YES_OPTION);
-
-        boolean ok = controlador.actualizarRanking(nombre, puntos, ganoMedalla);
-        if (ok) {
-            JOptionPane.showMessageDialog(this, "Ranking actualizado correctamente.");
-        } else {
-            JOptionPane.showMessageDialog(this, "El competidor no existe.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    } catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this, "Debe ingresar un numero valido.",
-                "Error de formato", JOptionPane.ERROR_MESSAGE);
-    } catch (Exception ex) {
-        JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-    }      // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalirActionPerformed
+    private void btnMostrarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarReporteActionPerformed
+    areaReporte.setText(controlador.obtenerReporte());
+    }//GEN-LAST:event_btnMostrarReporteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,8 +202,8 @@ public class VistaMundial extends javax.swing.JFrame {
     private javax.swing.JTextArea areaReporte;
     private javax.swing.JButton btnActualizarRanking;
     private javax.swing.JButton btnCrearEquipo;
+    private javax.swing.JButton btnMostrarReporte;
     private javax.swing.JButton btnRegistrarCompetidor;
-    private javax.swing.JButton btnSalir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

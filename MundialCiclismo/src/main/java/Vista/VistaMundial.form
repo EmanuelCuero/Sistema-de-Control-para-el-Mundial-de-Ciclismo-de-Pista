@@ -64,7 +64,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnSalir" max="32767" attributes="0"/>
+                          <Component id="btnMostrarReporte" max="32767" attributes="0"/>
                           <Component id="btnCrearEquipo" max="32767" attributes="0"/>
                           <Component id="btnRegistrarCompetidor" alignment="1" pref="211" max="32767" attributes="0"/>
                           <Component id="btnActualizarRanking" alignment="0" max="32767" attributes="0"/>
@@ -83,7 +83,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnActualizarRanking" min="-2" pref="45" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="btnSalir" min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="btnMostrarReporte" min="-2" pref="45" max="-2" attributes="0"/>
                       <EmptySpace pref="17" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -114,12 +114,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnActualizarRankingActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnSalir">
+            <Component class="javax.swing.JButton" name="btnMostrarReporte">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mostrar Reporte"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMostrarReporteActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
